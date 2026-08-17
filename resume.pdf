@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sakshi Jadhav | Software Engineer</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #e9edf3;
+            color: #1f2937;
+            line-height: 1.45;
+        }
+
+        .resume {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 25px auto;
+            background: white;
+            padding: 32px 38px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding-bottom: 18px;
+
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .name {
+            font-size: 34px;
+            font-weight: 800;
+            color: #111827;
+            letter-spacing: -0.5px;
+        }
+
+        .role {
+            margin-top: 5px;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            color: #2563eb;
+        }
+
+        .tagline {
+            margin-top: 5px;
+
+            font-size: 10.5px;
+            color: #6b7280;
+        }
+
+        .contact {
+            text-align: right;
+
+            font-size: 10.5px;
+            line-height: 1.8;
+
+            color: #4b5563;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        .section {
+            margin-top: 17px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 9px;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            color: #111827;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 5px;
+            height: 17px;
+
+            background: #2563eb;
+
+            border-radius: 3px;
+        }
+
+        .section-line {
+            height: 1px;
+            background: #e5e7eb;
+
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           SUMMARY
+        ========================== */
+
+        .summary {
+            font-size: 10.8px;
+            color: #374151;
+
+            text-align: justify;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 8px 25px;
+        }
+
+        .skill-box {
+            padding: 8px 10px;
+
+            background: #f8fafc;
+
+            border-left: 3px solid #2563eb;
+
+            border-radius: 4px;
+        }
+
+        .skill-title {
+            font-size: 10.5px;
+            font-weight: 700;
+
+            color: #111827;
+
+            margin-bottom: 2px;
+        }
+
+        .skill-content {
+            font-size: 10px;
+            color: #4b5563;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-item {
+            margin-bottom: 10px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid #f0f1f3;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 11.5px;
+        }
+
+        .education-header strong {
+            color: #111827;
+        }
+
+        .location {
+            color: #6b7280;
+            font-size: 10px;
+        }
+
+        .degree {
+            margin-top: 2px;
+
+            font-size: 10.5px;
+            color: #374151;
+        }
+
+        .education-details {
+            margin-top: 2px;
+
+            font-size: 9.8px;
+            color: #6b7280;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .project {
+            position: relative;
+
+            margin-bottom: 12px;
+            padding: 11px 13px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+
+        .project:hover {
+            border-color: #2563eb;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title {
+            font-size: 12px;
+            font-weight: 800;
+
+            color: #111827;
+        }
+
+        .project-badge {
+            padding: 3px 7px;
+
+            background: #dbeafe;
+
+            color: #1d4ed8;
+
+            font-size: 8.5px;
+            font-weight: 700;
+
+            border-radius: 10px;
+        }
+
+        .project-link {
+            margin-top: 3px;
+
+            font-size: 9.5px;
+        }
+
+        .project-link a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .project-description {
+            margin-top: 5px;
+
+            font-size: 10px;
+
+            color: #4b5563;
+        }
+
+        .tech {
+            margin-top: 6px;
+
+            font-size: 9.5px;
+
+            color: #374151;
+        }
+
+        .tech span {
+            display: inline-block;
+
+            margin-right: 5px;
+            margin-top: 3px;
+
+            padding: 3px 7px;
+
+            background: white;
+
+            border: 1px solid #dbe1e8;
+
+            border-radius: 10px;
+
+            color: #374151;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .experience {
+            padding: 9px 11px;
+
+            border-left: 3px solid #2563eb;
+
+            background: #f8fafc;
+
+            margin-bottom: 8px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 11px;
+        }
+
+        .experience-header strong {
+            color: #111827;
+        }
+
+        .date {
+            color: #6b7280;
+            font-size: 9.5px;
+        }
+
+
+        /* =========================
+           TWO COLUMN
+        ========================== */
+
+        .two-column {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================== */
+
+        .certification {
+            padding: 8px 10px;
+
+            background: #f8fafc;
+
+            border-left: 3px solid #2563eb;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           SOFT SKILLS
+        ========================== */
+
+        .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 6px;
+        }
+
+        .soft-skill {
+            padding: 5px 9px;
+
+            background: #eff6ff;
+
+            border: 1px solid #dbeafe;
+
+            color: #1d4ed8;
+
+            border-radius: 15px;
+
+            font-size: 9.5px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            margin-top: 15px;
+
+            padding-top: 9px;
+
+            border-top: 1px solid #e5e7eb;
+
+            text-align: center;
+
+            font-size: 8.5px;
+
+            color: #9ca3af;
+        }
+
+
+        /* =========================
+           PRINT
+        ========================== */
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .resume {
+                margin: 0;
+                box-shadow: none;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media screen and (max-width: 800px) {
+
+            .resume {
+                width: 95%;
+                margin: 10px auto;
+
+                padding: 25px;
+            }
+
+            .header {
+                display: block;
+            }
+
+            .contact {
+                text-align: left;
+
+                margin-top: 12px;
+            }
+
+            .skills-grid,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .education-header,
+            .project-header,
+            .experience-header {
+                display: block;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="resume">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div>
+
+            <h1 class="name">
+                Sakshi Jadhav
+            </h1>
+
+            <div class="role">
+                Aspiring Software Engineer | Full Stack Developer
+            </div>
+
+            <div class="tagline">
+                Java • Python • JavaScript • React • SQL • Web Development
+            </div>
+
+        </div>
+
+
+        <div class="contact">
+
+            📍 Sangli, Maharashtra, India
+            <br>
+
+            ✉
+            <a href="mailto:sakshijadhav6379913@gmail.com">
+                sakshijadhav6379913@gmail.com
+            </a>
+
+            <br>
+
+            ☎
+            <a href="tel:+918767850054">
+                +91 87678 50054
+            </a>
+
+            <br>
+
+            <a
+                href="https://github.com/sakshijadhav6379913-lgtm"
+                target="_blank">
+                GitHub
+            </a>
+
+            &nbsp; • &nbsp;
+
+            <a
+                href="https://www.codechef.com/"
+                target="_blank">
+                CodeChef
+            </a>
+
+            &nbsp; • &nbsp;
+
+            <a
+                href="https://www.netlify.com/"
+                target="_blank">
+                Portfolio
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= SUMMARY ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Professional Summary
+        </h2>
+
+        <div class="section-line"></div>
+
+        <p class="summary">
+
+            Computer Science and Engineering student aspiring to build a
+            career in software development and full-stack web development.
+            Hands-on knowledge of Java, Python, JavaScript, HTML, CSS and SQL,
+            with practical experience developing responsive web projects.
+            Familiar with Git/GitHub, Postman, SQL tools and Agile/Scrum
+            fundamentals. Strong problem-solving, teamwork and communication
+            skills with a passion for learning new technologies and building
+            real-world applications.
+
+        </p>
+
+    </section>
+
+
+    <!-- ================= TECHNICAL SKILLS ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+        <div class="section-line"></div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-box">
+
+                <div class="skill-title">
+                    Programming Languages
+                </div>
+
+                <div class="skill-content">
+                    Java, Python, JavaScript, SQL
+                </div>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="skill-title">
+                    Frontend Development
+                </div>
+
+                <div class="skill-content">
+                    HTML5, CSS3, JavaScript, Responsive Design
+                </div>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="skill-title">
+                    Backend Development
+                </div>
+
+                <div class="skill-content">
+                    Spring, SQL
+                </div>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="skill-title">
+                    Developer Tools
+                </div>
+
+                <div class="skill-content">
+                    VS Code, Sublime Text, MySQL Workbench,
+                    Git, GitHub, Postman
+                </div>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="skill-title">
+                    Development Practices
+                </div>
+
+                <div class="skill-content">
+                    Agile, Scrum Basics, Debugging, Problem Solving
+                </div>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <div class="skill-title">
+                    Core Concepts
+                </div>
+
+                <div class="skill-content">
+                    OOP, DBMS, Data Structures, Algorithms
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="section-line"></div>
+
+
+        <div class="education-item">
+
+            <div class="education-header">
+
+                <strong>
+                    P.V.P.I.T. College of Engineering, Sangli
+                </strong>
+
+                <span class="location">
+                    Sangli, Maharashtra
+                </span>
+
+            </div>
+
+            <div class="degree">
+                B.Tech — Computer Science and Engineering
+            </div>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <div class="education-header">
+
+                <strong>
+                    KBP Junior College, Piliv
+                </strong>
+
+                <span class="location">
+                    Akluj, Maharashtra
+                </span>
+
+            </div>
+
+            <div class="degree">
+                Higher Secondary Education
+            </div>
+
+            <div class="education-details">
+                Percentage: 82.40%
+            </div>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <div class="education-header">
+
+                <strong>
+                    KBP, Piliv
+                </strong>
+
+                <span class="location">
+                    Piliv, Maharashtra
+                </span>
+
+            </div>
+
+            <div class="degree">
+                Secondary Education
+            </div>
+
+            <div class="education-details">
+                Percentage: 80.00%
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <div class="section-line"></div>
+
+
+        <div class="project">
+
+            <div class="project-header">
+
+                <div class="project-title">
+                    Personal Portfolio Website
+                </div>
+
+                <div class="project-badge">
+                    WEB DEVELOPMENT
+                </div>
+
+            </div>
+
+
+            <div class="project-link">
+
+                🔗
+
+                <a
+                    href="https://malegrampanchyat.netlify.app/"
+                    target="_blank">
+
+                    Live Project
+
+                </a>
+
+            </div>
+
+
+            <div class="project-description">
+
+                Developed a responsive personal portfolio website to
+                showcase technical skills, education, projects,
+                certifications and achievements. Designed a clean,
+                user-friendly interface with responsive layouts for
+                desktop and mobile devices.
+
+            </div>
+
+
+            <div class="tech">
+
+                <strong>Technologies:</strong>
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= TRAINING ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Training & Internship
+        </h2>
+
+        <div class="section-line"></div>
+
+
+        <div class="experience">
+
+            <div class="experience-header">
+
+                <strong>
+                    Aptitude Training — PVPIT College
+                </strong>
+
+                <span class="date">
+                    Jun 2025 – Aug 2026
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience">
+
+            <div class="experience-header">
+
+                <strong>
+                    Java Developer — Interpay
+                </strong>
+
+                <span class="date">
+                    VERIFY DATE
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TWO COLUMN ================= -->
+
+    <div class="two-column">
+
+
+        <!-- CERTIFICATIONS -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Certifications
+            </h2>
+
+            <div class="section-line"></div>
+
+            <div class="certification">
+
+                <strong>
+                    Java Developer
+                </strong>
+
+                <br>
+
+                Interpay
+
+            </div>
+
+        </section>
+
+
+        <!-- SOFT SKILLS -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Soft Skills
+            </h2>
+
+            <div class="section-line"></div>
+
+
+            <div class="soft-skills">
+
+                <span class="soft-skill">
+                    Communication
+                </span>
+
+                <span class="soft-skill">
+                    Problem Solving
+                </span>
+
+                <span class="soft-skill">
+                    Teamwork
+                </span>
+
+                <span class="soft-skill">
+                    Public Speaking
+                </span>
+
+                <span class="soft-skill">
+                    Time Management
+                </span>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="footer">
+
+        Open to Software Development & Full Stack Development Opportunities
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
